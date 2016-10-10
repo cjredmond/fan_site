@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Details</title>
+
+    <style media="screen">
+    .smaller {
+      max-height:195px;
+    }
+    .purple {
+      color: red;
+    }
+    </style>
+
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="top_menu"> <a href="{% url 'bio_view' %}">About the author</a> |
+        <a href="{% url 'home_view' %}">Home</a>
+
+    <h1>Major Houses of Westeros</h1><br>
+
+    <div class="row">
+
+
+
+
+         {% for row in regions %}
+         <div class="col-sm-6 col-md-6">
+            <div class="thumbnail">
+              <img class="smaller" src="{{ row.leader.img }}">
+              <div class="caption purple">
+                <h3> House {{row.leader.name}} of {{row.capital}}</h3>
+                <p>Ruled by {{ row.leader.leader }} {{row.leader}}, {{ row.title }}<br>
+                Sigil: {{ row.leader.symbol }}<br>
+                Colors: {{ row.leader.color }}<br>
+              <h4>{{row.leader.motto}}</h4></p>
+                <p><a href="{% url 'detail_view' %}" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+ {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
