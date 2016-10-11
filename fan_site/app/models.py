@@ -1,6 +1,6 @@
 from django.db import models
 
-class House(models.Model):
+class Info(models.Model):
     name = models.CharField(max_length = 40)
     symbol = models.CharField(max_length = 40)
     color = models.CharField(max_length = 40)
@@ -12,6 +12,14 @@ class House(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        abstract = True
+
+
+
+class House(Info):
+    name = models.CharField(max_length = 50)
+
 
 class Region(models.Model):
     name = models.CharField(max_length = 50)
@@ -21,3 +29,8 @@ class Region(models.Model):
 
     def __str__(self):
         return self.name
+
+class SmallHouse(Info):
+    name = models.CharField(max_length = 45)
+    region = models.ForeignKey(Region, null=True, blank=True)
+    capital = models.CharField(max_length = 45, default = "a")

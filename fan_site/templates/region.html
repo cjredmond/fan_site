@@ -3,11 +3,45 @@
   <head>
     <meta charset="utf-8">
     <title>Region</title>
+    <style media="screen">
+    .smaller {
+      max-height:195px;
+    }
+    .center{
+      text-align: center;
+    }
+    .top_menu {
+      font-size: 16px;
+    }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
   </head>
   <body>
+<div class="container">
 
-<p>
-  {{ region.leader }}
-</p>
+  <div class="top_menu center"> <a href="{% url 'bio_view' %}">About the author</a> |
+    <a href="{% url 'home_view' %}">Home</a>
+
+  <h1 class="center"> Minor houses of {{region.name}}</h1><br>
+
+   {% for row in houses %}
+   <div class="col-sm-6 col-md-6">
+      <div class="thumbnail">
+        <img class="smaller" src="{{ row.img }}">
+        <div class="caption purple">
+          <h3> House {{row.name}} of {{row.capital}}</h3>
+          <p>Ruled by {{ row.leader}} {{row.name}}<br>
+          Sigil: {{ row.symbol }}<br>
+          Colors: {{ row.color }}<br>
+        <h4>{{row.motto}}</h4></p>
+          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        </div>
+      </div>
+    </div>
+
+
+ {% endfor %}
+ </div>
   </body>
 </html>

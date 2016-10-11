@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from app.models import Region, House
+from app.models import Region, House, SmallHouse
 # Create your views here.
 
 def home_view(request):
@@ -19,6 +19,8 @@ def detail_view(request):
 
 def region_view(request, region_id):
     context = {
-    "region" : Region.objects.get(id=region_id)
+    "region" : Region.objects.get(id=region_id),
+    "houses" : SmallHouse.objects.filter(region = region_id)
+
     }
     return render(request, "region.html", context)

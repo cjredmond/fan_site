@@ -39,7 +39,7 @@
                 Sigil: {{ row.leader.symbol }}<br>
                 Colors: {{ row.leader.color }}<br>
               <h4>{{row.leader.motto}}</h4></p>
-                <p><a href="{% url 'detail_view' %}" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                <p><a href="{% url 'detail_view' %}" class="btn btn-primary" role="button">Button</a> <a href="/region/{{row.id}}" class="btn btn-default" role="button">Button</a></p>
               </div>
             </div>
           </div>

@@ -22,5 +22,5 @@ urlpatterns = [
     url(r'^$', home_view, name="home_view"),
     url(r'^bio/$', bio_view, name="bio_view"),
     url(r'^details/$', detail_view, name="detail_view"),
-    url(r'^region/(?P<region_id>\d+)/$', region_view, name="region_view")
+    url(r'^region/(?P<region_id>\d+)/$', region_view, name="region_view<region_id>")
 ]
