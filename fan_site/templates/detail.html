@@ -8,22 +8,21 @@
     .smaller {
       max-height:195px;
     }
-    .purple {
-      color: red;
+    .center{
+      text-align: center;
+    }
+    .top_menu {
+      font-size: 16px;
     }
     </style>
-
-
-
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
     <div class="container">
-      <div class="top_menu"> <a href="{% url 'bio_view' %}">About the author</a> |
+      <div class="top_menu center"> <a href="{% url 'bio_view' %}">About the author</a> |
         <a href="{% url 'home_view' %}">Home</a>
 
-    <h1>Major Houses of Westeros</h1><br>
+    <h1 class="center">Major Houses of Westeros</h1><br>
 
     <div class="row">
 
